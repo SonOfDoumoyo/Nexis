@@ -1,0 +1,45 @@
+ /* **Void Black**      | `#030305` | Main page background       |
+| **Deep Charcoal**   | `#08060B` | Secondary sections         |
+| **Purple Black**    | `#0F091F` | Purple-tinted surfaces     |
+| **Deep Purple**     | `#271252` | Dark purple backgrounds    |
+| **Electric Purple** | `#7136D1` | Primary brand accent       |
+| **Bright Purple**   | `#9C61E3` | Hover/glow/highlight       |
+| **Neon Violet**     | `#7C4DFF` | Strong interactive accents |
+| **Warm Gold**       | `#C49A4A` | Secondary brand accent     |
+| **Metallic Gold**   | `#D9B65C` | Premium highlights         |
+| **Bright Gold**     | `#EFC65B` | CTA/highlight text         |
+| **Soft White**      | `#F7F6F7` | Main headings              |
+| **Muted White**     | `#C4C0C6` | Supporting copy            |
+| **Cool Gray**       | `#77747B` | Secondary metadata         |
+| **Border Gray**     | `#27232C` | Dividers/borders           |
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Comic+Relief:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import 'tailwindcss';
+
+/* :root{
+  --color-primary-purple: '#7136D1';
+  --color-deep-charcoal:'#08060B';
+  --color-deep-purple: '#271252';
+  --color-hover-purple:'#9C61E3';
+  --color-warm-gold:'#C49A4A';
+  --color-metallic-gold: '#D9B65C';
+  --color-bright-gold: '#EFC65B'
+} */
+
+@theme{
+  --font-bebas: 'Bebas Neue',sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-primary-purple: #7136D1;
+  --color-deep-charcoal:#08060B;
+  --color-deep-purple: #271252;
+  --color-hover-purple:#9C61E3;
+  --color-warm-gold:#C49A4A;
+  --color-metallic-gold: #D9B65C;
+  --color-bright-gold: #EFC65B;
+  --color-mute-gray:#77747B;
+  --color-bright-purple: #9C61E3;
+  --color-border-color: #27232C;
+  --color-subText: #ffffffa4;
+}
+
