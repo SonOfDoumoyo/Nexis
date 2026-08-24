@@ -7,8 +7,8 @@ interface listDataProp{
 
 function ListData({good = false,text}:listDataProp){
     return(
-        <div className="flex items-center gap-[3px]">
-            {good ? <FaCheck className="text-bright-gold"/>:<FaX className="text-white"/>}
+        <div className="flex items-center gap-[14px]">
+            {good ? <FaCheck className="text-bright-gold text-xl"/>:<FaX className="text-white text-xl"/>}
             <p className="text-subText text-[13px]">{text}</p>
         </div>
     )
@@ -17,11 +17,11 @@ function ListData({good = false,text}:listDataProp){
 
 function Problem(){
     return(
-        <div className="flex flex-col gap-3.5 border-r p-10 border-r-border-color">
-            <p className="text-primary-purple uppercase font-medium">The problem</p>
+        <div className="flex flex-col gap-3.5 p-10">
+            <p className="text-warm-gold uppercase font-medium text-xl">The problem</p>
             <p className="font-bebas uppercase text-white text-[40px] font-extralight leading-[1.2]">Your business is<br /> better than your<br/> <span className="text-bright-gold">online presence</span></p>
             <p className="text-subText">Great businesses lose oppurtunities every day<br/> because their digital presence doesn't reflect<br/> the quality of what they deliver in real life.</p>
-            <div className="flex gap-2.5">
+            <div className="flex gap-13 items-end">
                 <div className="border border-border-color relative w-[400px] h-fit rounded-[10px] overflow-hidden">
                     <img src="src/assets/nexis_standalone_assets/before-photo.png" alt="" />
                 </div>
@@ -39,9 +39,9 @@ function Problem(){
 
 function Solution(){
     return(
-        <div className="flex flex-row p-4 pl-14 items-center gap-5">
+        <div className="flex flex-row p-4 pl-14 items-center gap-13">
             <div className="flex flex-col gap-5">
-                <p className="uppercase font-medium text-bright-gold tracking-wider">The nexis transformation</p>
+                <p className="uppercase font-medium text-bright-gold tracking-wider text-xl">The nexis transformation</p>
                 <img src="src/assets/nexis_standalone_assets/after-photo.png" className="w-[430px]" alt=""/>
             </div>
             <div className="flex flex-col gap-5.5">
@@ -58,10 +58,10 @@ function Solution(){
 
 export default function ProblemSection(){
     return(
-        <div className="flex relative border-y-2 p-5 bg-black border-y-border-color">
+        <div className="flex relative p-5 h-[600px] bg-gradient-to-tr from-black to-primary-purple border-y-border-color justify-between items-center">
             <Problem />
-            <div className="flex items-center left-[584px] bottom-[249px] p-3.5 border-2 border-bright-gold rounded-full h-fit absolute">
-                <FaArrowRight className="text-bright-gold h-fit size-6"/>
+            <div className="flex items-center p-3.5 border-2 border-bright-gold rounded-full h-fit">
+                <FaArrowRight className="text-bright-gold h-fit size-22"/>
             </div>
             <Solution />
         </div>
