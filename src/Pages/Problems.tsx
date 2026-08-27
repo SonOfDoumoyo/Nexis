@@ -1,4 +1,4 @@
-import { FaArrowRight, FaCheck, FaX } from "react-icons/fa6"
+import { FaCheck, FaX } from "react-icons/fa6"
 import {FiArrowRight,} from "react-icons/fi"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -13,7 +13,7 @@ interface listDataProp{
 
 function ListData({good = false,text}:listDataProp){
     return(
-        <div className="texts flex items-center gap-[6px]">
+        <div className="texts flex items-center gap-1.5">
             {good ? <FaCheck className="text-bright-gold size-5"/>:<FaX className="text-white size-3"/>}
             <p className="text-subText lg:text-[13px] font-bold text-[13px]">{text}</p>
         </div>
@@ -28,7 +28,7 @@ function Problem(){
             <p className="font-bebas uppercase text-white text-[40px] font-extralight leading-[1.2]">Your business is<br /> better than your<br/> <span className="text-bright-gold">online presence</span></p>
             <p className="text-subText">Great businesses lose oppurtunities every day<br/> because their digital presence doesn't reflect<br/> the quality of what they deliver in real life.</p>
             <div className="flex lg:flex-row flex-col gap-10 lg:items-end items-start">
-                <div className="border border-border-color relative w-full lg:w-[400px] h-fit rounded-[10px] overflow-hidden">
+                <div className="border border-border-color relative w-full lg:w-100 h-fit rounded-[10px] overflow-hidden">
                     <img src="src/assets/nexis_standalone_assets/before-photo.png" alt="" />
                 </div>
                 <div className="lg:flex lg:flex-col w-full grid grid-cols-2 gap-3 lg:w-[37%]">
@@ -48,9 +48,9 @@ function Solution(){
         <div className="flex lg:flex-row flex-col lg:p-0 p-3 items-center gap-5">
             <div className="flex flex-col gap-4">
                 <p className="uppercase font-medium text-bright-gold tracking-wider text-xl">The nexis transformation</p>
-                <img src="src/assets/nexis_standalone_assets/after-photo.png" className="w-[450px]" alt=""/>
+                <img src="src/assets/nexis_standalone_assets/after-photo.png" className="w-112.5" alt=""/>
             </div>
-            <div className="lg:flex lg:flex-col grid grid-cols-2 gap-[8px] lg:gap-6 self-center">
+            <div className="lg:flex lg:flex-col grid grid-cols-2 gap-2 lg:gap-6 self-center">
                 <ListData good={true} text="Modern, intentional design"/>
                 <ListData good={true} text="Seamless experience"/>
                 <ListData good={true} text="Clear brand story"/>

@@ -3,8 +3,8 @@ import NexisLogo from "../assets/nexis_logo.png"
 import Spline from "@splinetool/react-spline"
 import { Application } from "@splinetool/runtime"
 import gsap from "gsap"
-import { useEffect, useRef, useState } from "react"
-import { useGSAP } from "@gsap/react"
+import {  useRef, useState } from "react"
+// import { useGSAP } from "@gsap/react"
 import { GiHamburgerMenu } from "react-icons/gi"
 import {useIsLittleAndroid,useIsMobile} from "../Hooks"
 import { FaX } from "react-icons/fa6"
@@ -48,7 +48,7 @@ function SplineObject(){
         // console.log("topHand", topHand);
     }
     return (
-        <Spline scene="https://prod.spline.design/a-4jNPF4Hn0VmtLm/scene.splinecode" className='absolute -z-[100] top-0 right-0 w-full h-full' onLoad={onLoa}/>
+        <Spline scene="https://prod.spline.design/a-4jNPF4Hn0VmtLm/scene.splinecode" className='absolute z-[-100] top-0 right-0 w-full h-full' onLoad={onLoa}/>
     );
 }
 
@@ -62,7 +62,7 @@ function DesktopNav(){
                 <li>Philosophy</li>
                 <li>Journal</li>
             </ul>
-            <button className="rounded-xl text-[12px] font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
+            <button className="rounded-xl font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
         </div>
     )
 }
@@ -70,14 +70,14 @@ function DesktopNav(){
 function MobileNav({visible,mobileNavRef}:MobileNavProp){
     return(
         <div ref={mobileNavRef} className={"absolute opacity-[1] top-15.5 flex-col items-center bg-[#0a0611a3] right-4.75  backdrop-blur-[14px] " + `${visible ? 'flex':'hidden'}`}>
-            <ul className="flex flex-col p-5 w-[200px] list-style-none text-white uppercase font-medium gap-6">
+            <ul className="flex flex-col p-5 w-50 list-style-none text-white uppercase font-medium gap-6">
                 <li>Work</li>
                 <li>Services</li>
                 <li>About</li>
                 <li>Philosophy</li>
                 <li>Journal</li>
             </ul>
-            <button className="rounded-xl mb-4.25 text-[12px] font-medium uppercase text-white flex py-4 px-8 border-[3px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
+            <button className="rounded-xl mb-4.25 font-medium uppercase text-white flex py-4 px-8 border-[3px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
         </div>
     )
 }
@@ -87,7 +87,7 @@ function Header() {
     const mobileNavRef = useRef<HTMLDivElement>(null)
     return (
         <div className="flex items-center justify-between p-2.5">
-            <img src={NexisLogo} alt="Nexis Logo" className="w-[100px]" />
+            <img src={NexisLogo} alt="Nexis Logo" className="w-25" />
             {!visible ? <GiHamburgerMenu className="block relative lg:hidden size-8 text-metallic-gold" onClick={()=>{setVisible(true);dropDownAnimation(mobileNavRef,true)}}/>: <FaX className="block relative lg:hidden size-8 text-metallic-gold" onClick={()=>{setVisible(false);dropDownAnimation(mobileNavRef,false)}}/>}
             <MobileNav visible={visible} mobileNavRef={mobileNavRef}/>
             <DesktopNav />
@@ -97,7 +97,7 @@ function Header() {
 
 function HeroText() {
     const textRef = useRef(null)
-    const divRef = useRef<HTMLDivElement>(null)
+    // const divRef = useRef<HTMLDivElement>(null)
     const isLittleAndroid = useIsLittleAndroid()
     const isMobile = useIsMobile()
     // useGSAP(()=>{
@@ -129,11 +129,11 @@ function HeroText() {
                 <span className="word inline-block"> digital</span> 
                 <span className="word inline-block"> experiences</span>
             </div> */}
-            <p className="text-white text-[70px] uppercase font-bold  font-bebas leading-[1]" ref={textRef}>Your Business <br /> deserves to be <span className="bg-linear-to-r from-0% from-primary-purple to-50% to-metallic-gold bg-clip-text text-transparent">seen.</span></p>
+            <p className="text-white text-[70px] uppercase font-bold  font-bebas leading-none" ref={textRef}>Your Business <br /> deserves to be <span className="bg-linear-to-r from-0% from-primary-purple to-50% to-metallic-gold bg-clip-text text-transparent">seen.</span></p>
             <p className="text-white text-[21px] font-medium leading-[1.2]">We turn hat you've built into a <br /> digital experience people remember</p>
             <div className="flex gap-2 items-center">
                 <BuildButton rounded={true} />
-                <button className="rounded-xl text-[12px] font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">See our work</button>
+                <button className="rounded-xl font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">See our work</button>
             </div>
             {/* <div>
                 <p className="uppercase [word-spacing:20px] text-white font-medium">Nexis + <span className="[word-spacing:3px]">Your business</span> = </p>
@@ -149,7 +149,7 @@ function HeroText() {
 function BuildButton({ rounded = false,onClick=()=>null}: ButtonProp) {
     return (
         <div>
-            <button className={"flex gap-1 items-center text-white bg-linear-to-br from-0%  border-2 border-[#271252] uppercase font-medium " + `${!rounded ? 'rounded-3xl p-1.5 px-4 text-[15px] from-black to-[#7136D1]' : 'rounded-xl py-3 px-7 text-[16px] from-bright-purple to-black'}`}>Let's Build <FiArrowRight className={`${!rounded ? '' : 'size-5'}`} onClick={onClick}/></button>
+            <button className={"flex gap-1 items-center text-white bg-linear-to-br from-0%  border-2 border-deep-purple uppercase font-medium " + `${!rounded ? 'rounded-3xl p-1.5 px-4 text-[15px] from-black to-primary-purple' : 'rounded-xl py-3 px-7 text-[16px] from-bright-purple to-black'}`}>Let's Build <FiArrowRight className={`${!rounded ? '' : 'size-5'}`} onClick={onClick}/></button>
         </div>
     )
 }
@@ -157,11 +157,11 @@ function BuildButton({ rounded = false,onClick=()=>null}: ButtonProp) {
 
 export default function HeroSection() {
     return (
-        <div className="relative z-[1000] bg-black">
+        <div className="relative z-1000 bg-black">
             <Header />
-            <div className=" p-4 min-h-[100vh]">
+            <div className=" p-4 min-h-screen">
                 <HeroText />
-                {/* <SplineObject /> */}
+                <SplineObject />
             </div>
         </div>
         

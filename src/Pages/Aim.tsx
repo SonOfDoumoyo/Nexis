@@ -1,36 +1,36 @@
-import { div, head } from "framer-motion/client"
+
 import Crystal from "../assets/nexis_standalone_assets/05_purple_abstract_card.png"
 import { FiArrowRight } from "react-icons/fi"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
-import { useRef, useState } from "react"
+import { useRef,} from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useIsLittleAndroid,  useIsMobile } from "../Hooks"
+import {  useIsMobile } from "../Hooks"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const projects = [
-{
-    head:'Aurora resort',
-    text:'Hospitality',
-    src:"src/assets/nexis_standalone_assets/08_mountain_resort.png"
-},
-{
-    head:'EMBER STEAKHOUSE',
-    text:'Restaurant',
-    src:"src/assets/nexis_standalone_assets/09_gourmet_food.png"
-},
-{
-    head:'ALTITUDE CAPITAL',
-    text:"Finance",
-    src:"src/assets/nexis_standalone_assets/10_modern_house.png"
-},
-{
-    head:'NexVault',
-    text:'Banking and Finance',
-    src:"src/assets/nexis_standalone_assets/banking_app.png"
-}
-]
+// const projects = [
+// {
+//     head:'Aurora resort',
+//     text:'Hospitality',
+//     src:"src/assets/nexis_standalone_assets/08_mountain_resort.png"
+// },
+// {
+//     head:'EMBER STEAKHOUSE',
+//     text:'Restaurant',
+//     src:"src/assets/nexis_standalone_assets/09_gourmet_food.png"
+// },
+// {
+//     head:'ALTITUDE CAPITAL',
+//     text:"Finance",
+//     src:"src/assets/nexis_standalone_assets/10_modern_house.png"
+// },
+// {
+//     head:'NexVault',
+//     text:'Banking and Finance',
+//     src:"src/assets/nexis_standalone_assets/banking_app.png"
+// }
+// ]
 
 function Aim(){
     const aimContRef = useRef<HTMLDivElement>(null)
@@ -70,10 +70,9 @@ function Aim(){
 
 function OurWork(){
     const isMobile = useIsMobile()
-    const ProjectsList = projects.map((project,index)=>(
-        <Section2 num={`0${String(index)}`} head={project.head} text={project.text} src={project.src}/>
-    ))
-    const [currentProject,setCurrentProject] = useState(ProjectsList[0])
+    // const ProjectsList = projects.map((project,index)=>(
+    //     <Section2 num={`0${String(index)}`} head={project.head} text={project.text} src={project.src}/>
+    // ))
     return (
         <div>
             <p className="text-primary-purple text-xl">OUR WORK</p>
@@ -108,7 +107,7 @@ interface listDataProp{
 function Sections({num, head, text, src, id,description_text,experience = false}:listDataProp){
     return (
         <div className="perspective-[1500px]">
-            <div className={`${'card'+num} transform-3d relative will-change-transform translate-z-0 bg-black shadow-sm shadow-white/30 flex h-[302px]  rounded-2xl border-2 border-border-color flex-col h-[100px] text-white w-full`} >
+            <div className={`${'card'+num} transform-3d relative will-change-transform translate-z-0 bg-black shadow-sm shadow-white/30 flex h-75.5 rounded-2xl border-2 border-border-color flex-col text-white w-full`} >
                 <div className="overflow-hidden relative w-full h-full rounded-2xl">
                     <img src={src} className={"absolute " + `${experience ? 'left-33 -top-2 w-2xs h-93.25 transform-[rotate3d(0,1,0,-35deg)]':"top-0 left-0 h-full w-full"}`} />
                 </div>
@@ -161,7 +160,7 @@ interface listDataProp2{
 function Section2({num, head, text, src}:listDataProp2){
     const isMobile = useIsMobile()
     return (
-        <div className={"relative overflow-hidden p-3 border border-border-color rounded-2xl " + `${isMobile ? 'w-[300px] shrink-0':''}`}>
+        <div className={"relative overflow-hidden p-3 border border-border-color rounded-2xl " + `${isMobile ? 'w-75 shrink-0':''}`}>
             <div className="w-full absolute z-10 bg-[#0000006c] h-full top-0 left-0"></div>
             <img src={src} className="absolute top-0 left-0 w-full h-full" />
             <div className="flex flex-col z-10 text-white mt-15 gap-5">
@@ -182,7 +181,7 @@ function Section2({num, head, text, src}:listDataProp2){
 
 export default function AimSection(){
     return (
-        <div className="bg-black p-[29px] relative flex flex-col gap-[50px] border-b border-b-white/10">
+        <div className="bg-black p-7.25 relative flex flex-col gap-12.5 border-b border-b-white/10">
             <Aim />
             <OurWork />
         </div>
