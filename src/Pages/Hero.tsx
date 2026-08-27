@@ -54,15 +54,15 @@ function SplineObject(){
 
 function DesktopNav(){
     return(
-        <div className="hidden lg:block">
-            <ul className="flex list-style-none text-white uppercase font-medium gap-6">
+        <div className=" hidden gap-4  lg:flex">
+            <ul className="flex list-style-none text-white uppercase font-medium gap-10">
                 <li>Work</li>
                 <li>Services</li>
                 <li>About</li>
                 <li>Philosophy</li>
                 <li>Journal</li>
             </ul>
-            <button className="rounded-xl font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
+            {/* <button className="rounded-xl font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">LET'S BUILD</button> */}
         </div>
     )
 }
@@ -77,7 +77,6 @@ function MobileNav({visible,mobileNavRef}:MobileNavProp){
                 <li>Philosophy</li>
                 <li>Journal</li>
             </ul>
-            <button className="rounded-xl mb-4.25 font-medium uppercase text-white flex py-4 px-8 border-[3px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>
         </div>
     )
 }
@@ -85,12 +84,14 @@ function MobileNav({visible,mobileNavRef}:MobileNavProp){
 function Header() {
     const [visible,setVisible] = useState(false)
     const mobileNavRef = useRef<HTMLDivElement>(null)
+    const isMobile = useIsMobile()
     return (
         <div className="flex items-center justify-between p-2.5">
             <img src={NexisLogo} alt="Nexis Logo" className="w-25" />
             {!visible ? <GiHamburgerMenu className="block relative lg:hidden size-8 text-metallic-gold" onClick={()=>{setVisible(true);dropDownAnimation(mobileNavRef,true)}}/>: <FaX className="block relative lg:hidden size-8 text-metallic-gold" onClick={()=>{setVisible(false);dropDownAnimation(mobileNavRef,false)}}/>}
             <MobileNav visible={visible} mobileNavRef={mobileNavRef}/>
             <DesktopNav />
+            {!isMobile && <button className="rounded-xl mb-4.25 font-medium uppercase text-white flex py-4 px-8 border-[3px] border-warm-gold/40 text-[13px]">LET'S BUILD</button>}
         </div>
     )
 }
