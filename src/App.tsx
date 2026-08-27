@@ -5,7 +5,7 @@ import AimSection from "./Pages/Aim"
 import Philosophy from "./Pages/philosphy"
 export default function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroSection />
       <QuoteSection />
       <ProblemSection />
