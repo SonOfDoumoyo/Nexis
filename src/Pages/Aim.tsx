@@ -1,5 +1,11 @@
 
 import Crystal from "../assets/nexis_standalone_assets/05_purple_abstract_card.png"
+import PhoneImg from "../assets/nexis_standalone_assets/06_gold_tunnel_phone_copy.png"
+import GlobeImg from "../assets/nexis_standalone_assets/07_network_globe.png"
+import AuroraResortImg from "../assets/nexis_standalone_assets/08_mountain_resort.png"
+import SteakHouseImg from "../assets/nexis_standalone_assets/09_gourmet_food.png"
+import AltitudeCapitalImg from "../assets/nexis_standalone_assets/10_modern_house.png"
+import NexVaultImg from "../assets/nexis_standalone_assets/banking_app.png"
 import { FiArrowRight } from "react-icons/fi"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -9,51 +15,35 @@ import {  useIsLittleAndroid, useIsMobile } from "../Hooks"
 
 gsap.registerPlugin(ScrollTrigger)
 
-// const projects = [
-// {
-//     head:'Aurora resort',
-//     text:'Hospitality',
-//     src:"src/assets/nexis_standalone_assets/08_mountain_resort.png"
-// },
-// {
-//     head:'EMBER STEAKHOUSE',
-//     text:'Restaurant',
-//     src:"src/assets/nexis_standalone_assets/09_gourmet_food.png"
-// },
-// {
-//     head:'ALTITUDE CAPITAL',
-//     text:"Finance",
-//     src:"src/assets/nexis_standalone_assets/10_modern_house.png"
-// },
-// {
-//     head:'NexVault',
-//     text:'Banking and Finance',
-//     src:"src/assets/nexis_standalone_assets/banking_app.png"
-// }
-// ]
+const projects = [
+{
+    head:'Aurora resort',
+    text:'Hospitality',
+    src: AuroraResortImg
+},
+{
+    head:'EMBER STEAKHOUSE',
+    text:'Restaurant',
+    src:SteakHouseImg
+},
+{
+    head:'ALTITUDE CAPITAL',
+    text:"Finance",
+    src:AltitudeCapitalImg
+},
+{
+    head:'NexVault',
+    text:'Banking and Finance',
+    src:NexVaultImg
+}
+]
 
 function Aim(){
-    const isMobile = useIsMobile()
+    // const isMobile = useIsMobile()
     const aimContRef = useRef<HTMLDivElement>(null)
     useGSAP(()=>{
-        if (!aimContRef.current?.children) return;
-        isMobile ? gsap.fromTo(aimContRef.current?.children,
-        {
-            x:window.innerWidth,
-        },
-        {
-            x:0,
-            stagger:0.2,
-            ease:'power3.out',
-            scrollTrigger:{
-                trigger:aimContRef.current?.children,
-                start:'top 80%',
-                end:'+=1200',
-                scrub:true
-            }
-        }
-    ):
-    gsap.fromTo(aimContRef.current?.children,
+        if (!aimContRef.current?.children) return;    
+        gsap.fromTo(aimContRef.current?.children,
         {
             x:window.innerWidth,
         },
@@ -72,12 +62,12 @@ function Aim(){
     return(
        <div className="flex flex-col gap-3">
         <p className="text-primary-purple text-xl">WHAT NEXIS DOES</p>
-        <div ref={aimContRef} className="aim-cont grid lg:grid-cols-3 grid-cols-1 gap-8 w-full lg:self-center">
+        <div ref={aimContRef} className="aim-cont grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 w-full lg:self-center">
             <Sections num="01" head="DESIGN" text="We make people stop scrolling." src={Crystal} id="1" 
             description_text="Design is more than making something look good. It's about creating a visual language that feels international, memorable, and unmistakably yours. At Nexis, we shape every detail, from composition and typography to motion and interaction, so your digital presence doesn't just exist. It leaves an impression "/>
-            <Sections num="02" head="EXPERIENCE" text="We turn visits into experiences." src="../assets/nexis_standalone_assets/06_gold_tunnel_phone_copy.png" id="2" experience={true}
+            <Sections num="02" head="EXPERIENCE" text="We turn visits into experiences." src={PhoneImg} id="2" experience={true}
             description_text="A great website shouldn't feel like a collection of pages. It should feel alive. We build experiences that guide attention, reward curiosity, and make every interaction feel deliberate. From the first scroll to the smallest transition, we turn your website into something people don't just use, but remember"/>
-            <Sections num="03" head="CONNECTION" text="We bring your business closer to the people looking for it." src="../assets/nexis_standalone_assets/07_network_globe.png" id="3" 
+            <Sections num="03" head="CONNECTION" text="We bring your business closer to the people looking for it." src={GlobeImg} id="3" 
             description_text="Technology means little if it doesn't connect people to what matters. Nexis builds digital experiences that bridge businesses, ideas, and the people behind them. Every interaction has a purpose: bringing your vision closer to your audience and turning a simple visit into a meaningful connection"/>
         </div>
        </div>
@@ -86,9 +76,9 @@ function Aim(){
 
 function OurWork(){
     const isMobile = useIsMobile()
-    // const ProjectsList = projects.map((project,index)=>(
-    //     <Section2 num={`0${String(index)}`} head={project.head} text={project.text} src={project.src}/>
-    // ))
+    const ProjectsList = projects.map((project,index)=>(
+        <Section2 num={`0${String(index)}`} head={project.head} text={project.text} src={project.src}/>
+    ))
     return (
         <div>
             <p className="text-primary-purple text-xl">OUR WORK</p>
@@ -100,11 +90,11 @@ function OurWork(){
                 </div>
             </div>
             <div className={" overflow-x-auto scrollbar-hide gap-5 flex flex-row overflow-hidden" + `${isMobile ? '':''}`}>
-                <Section2 num="01" head="AURORA RESORT" text="Hospitality" src="../assets/nexis_standalone_assets/08_mountain_resort.png"/>
+                {/* <Section2 num="01" head="AURORA RESORT" text="Hospitality" src="../assets/nexis_standalone_assets/08_mountain_resort.png"/>
                 <Section2 num="02" head="EMBER STEAKHOUSE" text="Restaurant" src="../assets/nexis_standalone_assets/09_gourmet_food.png"/>
                 <Section2 num="03" head="ALTITUDE CAPITAL" text="Finance" src="../assets/nexis_standalone_assets/10_modern_house.png"/>
-                <Section2 num="04" head="SOLSTICE WELLNESS" text="Wellness" src="../assets/nexis_standalone_assets/banking_app.png"/>
-
+                <Section2 num="04" head="SOLSTICE WELLNESS" text="Wellness" src="../assets/nexis_standalone_assets/banking_app.png"/> */}
+                {ProjectsList}
             </div>
         </div>
     )
@@ -121,7 +111,7 @@ interface listDataProp{
 }
 
 function Sections({num, head, text, src, id,description_text,experience = false}:listDataProp){
-    const isMobile = useIsMobile()
+    // const isMobile = useIsMobile()
     const isLittleAndroid = useIsLittleAndroid()
     return (
         <div className="perspective-[1500px]">
@@ -178,7 +168,7 @@ interface listDataProp2{
 function Section2({num, head, text, src}:listDataProp2){
     const isMobile = useIsMobile()
     return (
-        <div className={"relative overflow-hidden p-3 border border-border-color rounded-2xl " + `${isMobile ? 'w-75 shrink-0':'w-full'}`}>
+        <div className={"relative overflow-hidden p-3 border border-border-color rounded-2xl " + `${isMobile ? 'w-75 shrink-0':'w-[50%] shrink-0'}`}>
             <div className="w-full absolute z-10 bg-[#0000006c] h-full top-0 left-0"></div>
             <img src={src} className="absolute top-0 left-0 w-full h-full" />
             <div className="flex flex-col z-10 text-white mt-15 gap-5">

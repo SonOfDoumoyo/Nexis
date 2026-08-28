@@ -53,4 +53,21 @@
   display: none;
 }
 
+body{
+  background-color: black;
+}
+
+.hero{
+  background-image:url('./assets/nexis_standalone_assets/01_mountain_portal.png');
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  /* background-position: right; */
+}
+
+.footer{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%), url(/src/assets/nexis_standalone_assets/12_philosophy_rock_pillar.png), url(/src/assets/nexis_standalone_assets/13_philosophy_light_pillar.png);
+  background-position: top center, left top, right top;
+  background-repeat: no-repeat;
+}
+
 
