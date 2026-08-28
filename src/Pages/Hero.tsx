@@ -72,7 +72,7 @@ function DesktopNav(){
 
 function MobileNav({visible,mobileNavRef}:MobileNavProp){
     return(
-        <div ref={mobileNavRef} className={"absolute opacity-[1] top-15.5 rounded-[10px,33px] flex-col items-center bg-transparent border-2 border-metallic-gold right-4.75  backdrop-blur-[14px] " + `${visible ? 'flex':'hidden'}`}>
+        <div ref={mobileNavRef} className={"absolute opacity-[1] top-15.5 rounded-[10px_33px] flex-col items-center bg-transparent border-2 border-metallic-gold right-4.75  backdrop-blur-[14px] " + `${visible ? 'flex':'hidden'}`}>
             <ul className="flex flex-col p-5 w-50 list-style-none text-white uppercase font-medium gap-6 text-shadow-[1px_3px_3px_black]">
                 <li>Work</li>
                 <li>Services</li>

@@ -138,7 +138,7 @@ function Sections({num, head, text, src, id,description_text,experience = false}
                         <FiArrowRight/>
                     </div> 
                 </div>
-                <div className="absolute p-4 backface-hidden flex lg:h-full flex-col bg-[#00000075] gap-2" style={{transform: 'rotateY(180deg) translateZ(1px)'}}> 
+                <div className={"absolute p-4 backface-hidden h-full flex lg:h-full flex-col bg-[#00000075]" + `${isLittleAndroid ? 'gap-0':'gap-2'}`} style={{transform: 'rotateY(180deg) translateZ(1px)'}}> 
                     <p className="text-5xl z-10 text-white font-bebas">{head}</p>
                     <p className="text-subText tracking-[1.2] text-[15px] font-medium">{description_text}</p>
                     <div className="flex flex-row gap-1.5 items-center z-10 hover:cursor-pointer" onClick={()=>{
