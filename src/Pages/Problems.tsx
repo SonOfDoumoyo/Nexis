@@ -17,7 +17,7 @@ function ListData({good = false,text}:listDataProp){
     return(
         <div className="texts flex items-center gap-1.5">
             {good ? <FaCheck className="text-bright-gold size-5 md:size-7"/>:<FaX className="text-deep-purple md:size-6 size-3"/>}
-            <p className="text-subText lg:text-[13px] md:text-[15px] font-bold text-[13px]">{text}</p>
+            <p className="text-subText lg:text-[1.2em] md:text-[1em]  font-bold text-[13px]">{text}</p>
         </div>
     )
 }
@@ -30,7 +30,7 @@ function Problem(){
             <p className="text-warm-gold uppercase font-medium text-xl">The problem</p>
             <p className="font-bebas uppercase text-white text-[40px] font-extralight leading-[1.2]">Your business is<br /> better than your<br/> <span className="text-bright-gold">online presence</span></p>
             <p className="text-subText">Great businesses lose oppurtunities every day<br/> because their digital presence doesn't reflect<br/> the quality of what they deliver in real life.</p>
-            <div className="problem flex lg:flex-row flex-col gap-10 items-start">
+            <div className="problem flex lg:flex-row md:flex-col flex-col gap-10 items-start">
                 <div className="border border-border-color relative w-full lg:w-100 h-fit rounded-[10px] overflow-hidden">
                     <img src={ProblemImg} alt="the problem" />
                 </div>
@@ -48,9 +48,9 @@ function Problem(){
 
 function Solution(){
     return(
-        <div className="flex flex-col gap-4 lg:p-0 p-3.25 md:p-7.5">
+        <div className="flex flex-col gap-4 lg:p-2 p-3.25 md:p-7.5">
             <p className="uppercase font-medium text-bright-gold tracking-wider text-xl">The nexis transformation</p>
-            <div className="solution flex lg:flex-row flex-col lg:p-0 p-3.25 md:p-7.5 items-center gap-5">
+            <div className="solution flex lg:flex-row md:flex-col flex-col lg:p-2 p-3.25 md:p-7.5 items-center gap-5">
                 <img src={SolutionImg} className="lg:w-112.5 w-full" alt=""/>
                 <div className="lg:flex lg:flex-col md:flex md:flex-row grid grid-cols-2 gap-2 lg:gap-6 md:self-start self-center">
                     <ListData good={true} text="Modern, intentional design"/>
@@ -114,7 +114,7 @@ export default function ProblemSection(){
         },'-=0.5')
     })
     return(
-        <div className="flex lg:flex-row flex-col gap-0 relative h-fit lg:h-137.5 border-y bg-black border-y-border-color justify-between items-center">
+        <div className="flex lg:flex-row flex-col gap-0 relative h-fit  border-y bg-black border-y-border-color justify-between items-center">
             <Problem />
             <div className="flex items-center p-2.75  border border-bright-gold rounded-full h-fit -translate-x-6.5">
                 <FiArrowRight className="text-bright-gold h-fit size-8 rotate-90 lg:rotate-0"/>

@@ -59,11 +59,35 @@ function DesktopNav(){
     return(
         <div className=" hidden gap-4 md:flex  lg:flex">
             <ul className="flex list-style-none text-white uppercase font-medium gap-10">
-                <li>Work</li>
-                <li>Services</li>
-                <li>About</li>
-                <li>Philosophy</li>
-                <li>Journal</li>
+                <li className="hover:text-primary-purple cursor-pointer" onClick={() => {
+                        document.getElementById("work")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        })
+                }}>
+                    Work</li>
+                <li className="hover:text-primary-purple cursor-pointer" onClick={() => {
+                        document.getElementById("services")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        })
+                }}>
+                    Services</li>
+                <li className="hover:text-primary-purple cursor-pointer" onClick={() => {
+                        document.getElementById("about")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        })
+                }}>
+                    About
+                </li>
+                <li className="hover:text-primary-purple cursor-pointer" onClick={() => {
+                        document.getElementById("philosophy")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        })
+                }}>
+                    Philosophy</li>
             </ul>
             {/* <button className="rounded-xl font-medium uppercase text-white flex py-4 px-8 border-[0.5px] border-warm-gold/40 text-[13px]">LET'S BUILD</button> */}
         </div>
@@ -74,11 +98,10 @@ function MobileNav({visible,mobileNavRef}:MobileNavProp){
     return(
         <div ref={mobileNavRef} className={"absolute opacity-[1] top-15.5 rounded-[10px_33px] flex-col items-center bg-transparent border-2 border-metallic-gold right-4.75  backdrop-blur-[14px] " + `${visible ? 'flex':'hidden'}`}>
             <ul className="flex flex-col p-5 w-50 list-style-none text-white uppercase font-medium gap-6 text-shadow-[1px_3px_3px_black]">
-                <li>Work</li>
-                <li>Services</li>
-                <li>About</li>
-                <li>Philosophy</li>
-                <li>Journal</li>
+                <li className="hover:text-primary-purple">Work</li>
+                <li className="hover:text-primary-purple">Services</li>
+                <li className="hover:text-primary-purple">About</li>
+                <li className="hover:text-primary-purple">Philosophy</li>
             </ul>
         </div>
     )
@@ -155,7 +178,7 @@ export function BuildButton({text, rounded = false,onClick=()=>null}: ButtonProp
 
 export default function HeroSection() {
     return (
-        <div className="hero relative z-1000 bg-black bg-cover bg-left lg:bg-right md:bg-left lg:bg-contain md:bg-cover">
+        <div id="work" className="hero relative z-1000 bg-black bg-cover bg-left lg:bg-right md:bg-left lg:bg-contain md:bg-cover">
             <Header />
             <div className=" p-4 min-h-screen">
                 <HeroText />
