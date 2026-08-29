@@ -1,5 +1,4 @@
 
-import type { IconType } from "react-icons";
 import { FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { BuildButton } from "./Hero";
 import { useGSAP } from "@gsap/react";
@@ -8,10 +7,6 @@ import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger)
 
-interface SocialProp{
-    icon:IconType
-    name:string
-}
 
 function PhilosophyPart(){
     useGSAP(()=>{
