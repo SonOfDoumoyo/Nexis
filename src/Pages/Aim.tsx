@@ -154,7 +154,7 @@ export function OurWork(){
                     <FiArrowRight className="lg:size-5 size-9" />
                 </div>
             </div>
-            <div className={`overflow-x-auto scrollbar-hide gap-5 flex flex-row overflow-hidden ${isMobile ? '':'h-[320px]'}`}>
+            <div className={`overflow-x-auto scrollbar-hide gap-5 flex flex-row overflow-hidden ${isMobile ? '':'h-[400px]'}`}>
                 {/* <Section2 num="01" head="AURORA RESORT" text="Hospitality" src="../assets/nexis_standalone_assets/08_mountain_resort.png"/>
                 <Section2 num="02" head="EMBER STEAKHOUSE" text="Restaurant" src="../assets/nexis_standalone_assets/09_gourmet_food.png"/>
                 <Section2 num="03" head="ALTITUDE CAPITAL" text="Finance" src="../assets/nexis_standalone_assets/10_modern_house.png"/>
@@ -276,24 +276,51 @@ interface listDataProp2{
     src: string,
 }
 
-function Section2({num, head, text, src}:listDataProp2){
+function Section2({num, head, text, src}: listDataProp2) {
     const isMobile = useIsMobile()
+
     return (
-        <div className={"relative overflow-hidden p-4 border border-border-color rounded-2xl " + `${isMobile ? 'w-75 shrink-0':'w-[40%] shrink-0'}`}>
-            <div className="w-full absolute z-0 bg-[#0000006c] h-full top-0 left-0"></div>
-            <img src={src} className="absolute top-0 left-0 w-full h-full z-0 opacity-70" />
-            <div className="flex flex-col h-full top-0 absolute z-10  m-11 items-start text-white gap-5">
-                <div className="z-10">
-                    <p className={`text-[12px] z-10`}>{num}</p>
-                    <h1 className="text-xl text-white font-bebas">{head}</h1>
-                    <p className=" text-[#ffffff9d] text-[13px] z-10">{text}</p>
+        <div
+            className={
+                "relative overflow-hidden border border-border-color rounded-2xl " +
+                `${isMobile
+                    ? "w-[75%] h-[250px] shrink-0"
+                    : "w-[40%] h-[300px] shrink-0"}`
+            }
+        >
+            <div className="absolute inset-0 z-0 bg-[#0000006c]" />
+
+            <img
+                src={src}
+                className="absolute inset-0 z-0 h-full w-full object-cover opacity-70"
+                alt=""
+            />
+
+            <div className="absolute inset-0 z-10 flex flex-col items-start justify-between p-11 text-white">
+
+                <div>
+                    <p className="text-[12px]">
+                        {num}
+                    </p>
+
+                    <h1 className="font-bebas text-xl text-white">
+                        {head}
+                    </h1>
+
+                    <p className="text-[13px] text-[#ffffff9d]">
+                        {text}
+                    </p>
                 </div>
-                <div className="flex flex-row gap-2.5 z-10 items-center text-[#ffffff9d] hover:text-white hover:cursor-pointer">
-                    <p className="uppercase text-[13px] font-medium">View Project</p>
+
+                <div className="flex cursor-pointer items-center gap-2.5 text-[#ffffff9d] hover:text-white">
+                    <p className="text-[13px] font-medium uppercase">
+                        View Project
+                    </p>
+
                     <FiArrowRight />
                 </div>
+
             </div>
-            
         </div>
     )
 }
