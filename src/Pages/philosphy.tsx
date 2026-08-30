@@ -50,7 +50,7 @@ function Socials(){
 
 function Footer(){
     return(
-        <div className=" relative backdrop-brightness-[0.5] items-start justify-center flex lg:flex-row flex-col p-3 w-full lg:gap-[5%] gap-7.5 md:gap-[15%]">
+        <div className=" relative backdrop-brightness-[0.5] items-center lg:items-start justify-center flex lg:flex-row flex-col p-3 w-full lg:gap-[5%] gap-7.5 md:gap-[15%]">
             <p className="uppercase text-white lg:text-5xl text-[30px] font-bebas">Ready to be <br/><span className="bg-linear-to-r from-0% from-primary-purple to-metallic-gold bg-clip-text text-transparent">remembered</span></p>
             <div className="flex flex-col gap-8">
                 <p className="text-[#ffffff9d] font-medium">Your business already has a story.<br />Let's give it an experience worthy of it.</p>

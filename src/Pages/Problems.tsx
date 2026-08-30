@@ -17,7 +17,7 @@ function ListData({good = false,text}:listDataProp){
     return(
         <div className="texts flex items-center gap-1.5">
             {good ? <FaCheck className="text-bright-gold size-5 md:size-7"/>:<FaX className="text-deep-purple md:size-6 size-3"/>}
-            <p className="text-subText lg:text-[1.2em] md:text-[1em]  font-bold text-[13px]">{text}</p>
+            <p className={`text-subText font-bold ${good == true ? 'text-[1em]' : 'lg:text-[1.2em] md:text-[1em] sm:text-[0.9em]'}`}>{text}</p>
         </div>
     )
 }
@@ -31,10 +31,10 @@ function Problem(){
             <p className="font-bebas uppercase text-white text-[40px] font-extralight leading-[1.2]">Your business is<br /> better than your<br/> <span className="text-bright-gold">online presence</span></p>
             <p className="text-subText">Great businesses lose oppurtunities every day<br/> because their digital presence doesn't reflect<br/> the quality of what they deliver in real life.</p>
             <div className="problem flex lg:flex-row md:flex-col flex-col gap-10 items-start">
-                <div className="border border-border-color relative w-full lg:w-100 h-fit rounded-[10px] overflow-hidden">
+                <div className="border border-border-color relative w-full lg:w-130 h-fit rounded-[10px] overflow-hidden">
                     <img src={ProblemImg} alt="the problem" />
                 </div>
-                <div className="lg:flex lg:flex-col md:flex md:flex-row w-full grid grid-cols-2 md:self-center gap-3 lg:w-[37%]">
+                <div className="lg:flex lg:flex-col md:flex md:flex-row w-full grid grid-cols-2 md:self-center gap-3">
                     <ListData text="Outdated design"/>
                     <ListData text="Hard to navigate"/>
                     <ListData text="No clear message"/>
@@ -51,8 +51,8 @@ function Solution(){
         <div className="flex flex-col gap-4 lg:p-2 p-3.25 md:p-7.5">
             <p className="uppercase font-medium text-bright-gold tracking-wider text-xl">The nexis transformation</p>
             <div className="solution flex lg:flex-row md:flex-col flex-col lg:p-2 p-3.25 md:p-7.5 items-center gap-5">
-                <img src={SolutionImg} className="lg:w-112.5 w-full" alt=""/>
-                <div className="lg:flex lg:flex-col md:flex md:flex-row grid grid-cols-2 gap-2 lg:gap-6 md:self-start self-center">
+                <img src={SolutionImg} className="lg:w-[20em] w-full" alt=""/>
+                <div className="lg:grid lg:grid-cols-1 md:grid md:grid-cols-2 sm:flex sm:flex-col gap-2 lg:gap-6 md:self-start self-center">
                     <ListData good={true} text="Modern, intentional design"/>
                     <ListData good={true} text="Seamless experience"/>
                     <ListData good={true} text="Clear brand story"/>

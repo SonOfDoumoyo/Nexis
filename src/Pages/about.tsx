@@ -12,14 +12,14 @@ import { OurWork } from "./Aim";
 function Dna(){
     function WhichDna({id, title, text}:any){
         return (
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col items-center gap-5 sm:shadow sm:shadow-primary-purple w-full p-3 rounded-4xl bg-linear-to-r from-primary-purple/20 to-warm-gold">
                 {id == "1" && <Code2  size={42}  className="text-primary-purple mb-[10px]"/>}
                 {id == "2" && <PenTool size={42}  className="text-primary-purple mb-[10px]"/>}
                 {id == "3" && <Clapperboard size={42}  className="text-primary-purple mb-[10px]"/>}
                 {id == "4" && <Megaphone size={42}  className="text-primary-purple mb-[10px]"/>}
                 {id == "5" && <CakeSlice size={42}  className="text-primary-purple mb-[10px]"/>}
                 <p className="text-white font-bold text-xl">{title}</p>
-                <p className="text-xl text-white text-center w-[70%]">{text}</p>
+                <p className="text-xl text-white/50 text-center break-words">{text}</p>
             </div>
         )
     }
@@ -27,7 +27,7 @@ function Dna(){
         <div className="mt-[50px] flex items-center flex-col gap-7">
             <p className="text-xl text-primary-purple">OUR DNA</p>
             <p className="text-white font-bebas text-6xl mb-[30px]">CREATIVE MINDS. DIVERSE SKILLS. <span className="text-bright-gold">ONE VISION.</span></p>
-            <div className="flex flex-row w-full justify-between items-center">
+            <div className="flex lg:flex-row md:flex-col sm:flex-col sm:gap-11 w-full justify-between items-center">
                 <WhichDna id="1" title="DEVELOPERS" text="We build fast, scalable and modern digital solutions." />
                 <WhichDna id="2" title="DESIGNERS" text="We design visuals that communicate and captivate." />
                 <WhichDna id="3" title="FILMMAKERS" text="We tell stories through cinematic visuals that leave an impact." />
@@ -41,7 +41,7 @@ function Dna(){
 function Founders(){
     function FounderBox({name, title, skill}:any){
         return (
-            <div className="relative lg:h-[400px] sm:h-[350px] w-[200px] bg-black">
+            <div className="relative lg:h-[400px] sm:h-[450px] lg:w-[200px] sm:w-full">
                 <div className="relative h-[50%] w-full">
                     <img
                     className="absolute inset-0 rounded-[9px] h-full opacity-70 w-full object-cover"
@@ -69,7 +69,7 @@ function Founders(){
         <div className="flex flex-col items-center gap-2">
             <p className="text-xl text-primary-purple">THE FOUNDERS</p>
             <p className="text-white text-6xl font-bebas mb-11">5 CO-FOUNDERS. <span className="text-metallic-gold">1 MISSION.</span></p>
-            <div className="flex items-center">
+            <div className="flex items-center sm:w-[70%]">
                 <div className="grid lg:grid-cols-5 sm:grid-cols-1 lg:gap-11 w-full">
                     <FounderBox name="KUDOS" title="CO-FOUNDER" skill={<p>Full Stack Developer</p>} />
                     <FounderBox name="NIMI" title="CO-FOUNDER" skill={<p>Full Stack Developer</p>} />
@@ -92,17 +92,17 @@ function Vision(){
                     <p className="text-white text-8xl font-bebas">WE BUILD EXPERIENCES<br /> THAT CONNECT, INSPIRE, <br />AND <span className="text-bright-gold">DRIVE GROWTH.</span></p>
                     <p className="text-white">We believe every brand has a story worth telling. <br/> Our mission is to help businesses stand out in a <br />digital world that never stops moving.</p>
                 </div>
-                <div className="text-white flex flex-row justify-between items-center pr-[70px]">
+                <div className="text-white flex flex-row justify-between items-center lg:pr-[70px]">
                     <span className="flex flex-col gap-7">
-                        <p className="font-bold text-3xl">OUR APPROACH</p>
-                        <p>We listen, we strategize, <br/>we create, we deliver <br/>and we stay with you.</p>
+                        <p className="font-bold lg:text-3xl sm:text-[1.6em]">OUR APPROACH</p>
+                        <p className="">We listen, we strategize, <br/>we create, we deliver <br/>and we stay with you.</p>
                     </span>
                     <span className="flex flex-col gap-7">
-                        <p className="font-bold text-3xl">OUR PROMISE</p>
+                        <p className="font-bold lg:text-3xl sm:text-[1.6em]">OUR PROMISE</p>
                         <p>Quality, Consistency,<br/>Creativity. That's the<br/> Nexis promise.</p>
                     </span>
                     <span className="flex flex-col gap-7">
-                        <p className="font-bold text-3xl">OUR CULTURE</p>
+                        <p className="font-bold lg:text-3xl sm:text-[1.6em]">OUR CULTURE</p>
                         <p>We suuport ideas,<br/> encourage growth, and <br/>build as a family.</p>
                     </span>
                 </div>

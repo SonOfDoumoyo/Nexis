@@ -99,25 +99,24 @@ function Aim(){
 function ServiceHero2(){
     function Process({title, text, num}:any) {
         return (
-            <div className="flex flex-col items-center mb-6">
+            <div className="flex flex-col items-center mb-6 gap-4">
                 <div className="flex items-center justify-center p-2 border border-warm-gold rounded-full">
                     <p className="text-white font-bold bg-primary-purple rounded-full p-2">{num}</p>
                 </div>
-                <p className="text-2xl font-semibold text-white">{title}</p>
-                <p className="text-xl text-white text-center w-[80%]">{text}</p>
+                <p className="lg:text-[1.5em] sm:text-[1em] font-semibold text-white">{title}</p>
             </div>
         )
     }
     return (
-        <div className="flex flex-col items-center mt-[60px] gap-5">
+        <div className="flex flex-col items-center mt-[60px] gap-9">
             <p className="text-primary-purple text-xl">OUR PROCESS</p>
             <p className="text-white text-7xl font-bebas">A CLEAR PROCESS. <span className="text-bright-gold">REAL RESULTS.</span></p>
-            <div className="flex flex-row justify-between w-full">
-                <Process title="DISCOVER" text="We learn about your goals, audience, and challenges." num="01"/>
-                <Process title="STRATEGIZE" text="We plan the best appproach to bring your vision to life." num="02"/>
-                <Process title="DESIGN & BUILD" text="We design and develop with precision and passion." num="03"/>
-                <Process title="LAUNCH" text="We deliver and launch your project successfully." num="04"/>
-                <Process title="GROW" text="We support you with strategies to grow further." num="05"/>
+            <div className="grid sm:grid-cols-1 gap-2 md:grid-cols-5 sm:grid-cols-1 justify-between w-full">
+                <Process title="DISCOVER"  num="01"/>
+                <Process title="STRATEGIZE"  num="02"/>
+                <Process title="DESIGN & BUILD"  num="03"/>
+                <Process title="LAUNCH" num="04"/>
+                <Process title="GROW"  num="05"/>
             </div>
         </div>
     )
@@ -147,10 +146,10 @@ export function OurWork(){
     ))
     return (
         <div>
-            <div className="flex flex-row justify-between">
-                <p className="lg:text-6xl text-[35px] my-1 font-bebas text-white">DIGITAL EXPERIENCES. <span className="text-metallic-gold">REAL RESULTS.</span></p>
+            <div className="flex flex-row sm:flex-col justify-between my-4 items-end">
+                <p className="lg:text-6xl text-[30px] font-bebas text-white">DIGITAL EXPERIENCES. <span className="text-metallic-gold">REAL RESULTS.</span></p>
                 <div className="flex items-center gap-1 text-metallic-gold">
-                    <p className="text-[14px] font-medium">VIEW ALL PROJECTS</p>
+                    <p className="lg:text-[14px] sm:text-[1em] font-medium">VIEW ALL PROJECTS</p>
                     <FiArrowRight className="lg:size-5 size-9" />
                 </div>
             </div>
