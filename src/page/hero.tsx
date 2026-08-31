@@ -1,5 +1,5 @@
 import NexisLogo from "../assets/nexis_logo.png"
-import { useIsMobile, useIsLittleAndroid } from "../Hooks"
+import { useIsMobile } from "../Hooks"
 import { FiArrowRight } from "react-icons/fi"
 import { Menu } from "lucide-react";
 import { useState } from "react";
