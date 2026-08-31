@@ -12,19 +12,19 @@ export default function ServicesSection(){
     const isMobile = useIsMobile();
     function Services({title, text, id}:any){
         return (
-            <div className={`${isMobile == true ? 'flex-col':'flex-row'} flex gap-8 p-11 bg-primary-purple/50 backdrop-blur-xl`}>
-                {id == "1" && (<ExploreOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
-                {id == "2" && (<AutoModeOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
-                {id == "3" && (<DesignServicesOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
-                {id == "4" && (<DeveloperModeOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
-                {id == "5" && (<VideocamOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
-                {id == "6" && (<CampaignOutlinedIcon className="text-bright-gold w-[fit]" fontSize="large"/>)}
+            <div className={`${isMobile == true ? 'flex-col p-4':'flex-row p-11'} flex gap-8 bg-primary-purple/50 backdrop-blur-xl`}>
+                {id == "1" && (<ExploreOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
+                {id == "2" && (<AutoModeOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
+                {id == "3" && (<DesignServicesOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
+                {id == "4" && (<DeveloperModeOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
+                {id == "5" && (<VideocamOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
+                {id == "6" && (<CampaignOutlinedIcon className="text-bright-gold w-[fit]" fontSize={`${isMobile ? 'small':'large'}`}/>)}
                 <div className="flex flex-col justify-between gap-4 h-full w-full">
                     <div className="flex flex-col gap-3">
-                        <p className="text-2xl font-semibold font-grotesk">{title}</p>
-                        <p className={`${isMobile == true ? '':''} text-[clamp(0.95rem,0.9vw,1.45rem)] text-white/60`}>{text}</p>
+                        <p className={`${isMobile ? 'text-[11px]':'text-2xl'} font-bebas font-semibold`}>{title}</p>
+                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':''}  text-white/60`}>{text}</p>
                     </div>
-                    <p className="text-sm text-bright-gold flex flex-row gap-2 items-center">Learn More <FiArrowRight /></p>
+                    <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold flex flex-row gap-2 items-center`}>Learn More <FiArrowRight /></p>
                 </div>
             </div>
         )
@@ -33,11 +33,11 @@ export default function ServicesSection(){
 
 
     return (
-        <section className={`${isMobile ? 'grid-cols-1 gap-6':'grid-cols-[3fr_7fr]'} grid w-full`}>
-            <div className="flex flex-col gap-8">
-                <p className="text-bright-gold">OUR SERVICES</p>
-                <p className={`${isMobile ? 'text-6xl font-light':'text-5xl font-normal'} font-sora`}>Digital Solution.<br/><span className="text-primary-purple">Real Impact.</span></p>
-                <p className="text-white/60 text-xl">We design, build, and scale intelligent digital<br/>solutions that help businesses grow, operate<br/>smarter, and lead the future.</p>
+        <section id="service" className={`${isMobile ? 'grid-cols-1 gap-6':'grid-cols-[3fr_7fr]'} grid w-full`}>
+            <div className="flex flex-col gap-4">
+                <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold font-bold`}>OUR SERVICES</p>
+                <p className={`${isMobile ? 'text-3xl font-bold font-bebas':'text-6xl font-normal font-bebas'} `}>Digital Solution.<br/><span className="text-primary-purple">Real Impact.</span></p>
+                <p className={`text-white/60 ${isMobile ? 'text-[8px]':'text-xl'}`}>We design, build, and scale intelligent digital<br/>solutions that help businesses grow, operate<br/>smarter, and lead the future.</p>
                 <div className={`${isMobile == true ? 'flex-row w-full':'flex-row'} flex gap-3`}>
                     <CreateButton text="Work With Us" type={1} arrow={true}/>
                     <CreateButton text="Explore Our Process" type={2} arrow={false} />

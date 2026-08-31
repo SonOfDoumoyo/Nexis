@@ -20,18 +20,63 @@ export default function App() {
   const isMobile = useIsMobile()
 
   return (
-    <div className="overflow-hidden relative h-screen min-w-[400px] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${isMobile == false ? NexisBackground : NexisMobileBackground})`}}>
-      {/* <div className="max-h-fit min-h-fit h-full w-full overflow-hidden">
-        <img src={`${isMobile == false ? NexisBackground : NexisMobileBackground}`} alt="" className="h-full w-full"/>
-      </div> */}
-      <div className="absolute overflow-y-scroll overflow-x-hidden flex flex-col inset-0 p-7 gap-10">
+  <div
+    className="
+      relative
+      w-full
+      min-h-screen
+      overflow-hidden
+      bg-cover
+      bg-center
+      bg-no-repeat
+    "
+    style={{
+      backgroundImage: `url(${
+        isMobile ? NexisMobileBackground : NexisBackground
+      })`,
+    }}
+  >
+    <main
+      className="
+        absolute
+        inset-0
+        w-full
+        h-full
+        overflow-y-auto
+        overflow-x-hidden
+        flex
+        flex-col
+        gap-16
+        px-5
+        py-7
+        sm:px-7
+        lg:px-10
+      "
+    >
+      <section className="w-full shrink-0">
         <HeroSection />
+      </section>
+
+      <section className="w-full shrink-0">
         <ServicesSection />
+      </section>
+
+      <section className="w-full shrink-0">
         <PhilosophySection />
+      </section>
+
+      <section className="w-full shrink-0">
         <AboutSection />
+      </section>
+
+      <section className="w-full shrink-0">
         <ContactSection />
-        <Footer/>
-      </div>
-    </div>
-  )
+      </section>
+
+      <footer className="w-full shrink-0">
+        <Footer />
+      </footer>
+    </main>
+  </div>
+);
 }
