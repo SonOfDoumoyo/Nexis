@@ -6,7 +6,6 @@ import DesignServicesOutlinedIcon from "@mui/icons-material/DesignServicesOutlin
 import DeveloperModeOutlinedIcon from "@mui/icons-material/DeveloperModeOutlined";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
-import { FiArrowRight } from "react-icons/fi"
 import { useFormContext } from "../context";
 
 
