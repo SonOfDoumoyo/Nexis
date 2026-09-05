@@ -251,9 +251,9 @@ function PersonalForm({setFormNumber}:FormProp){
     const [phoneNumError,setPhoneNumError] = useState(false)
     const {personalDetails,setPersonalDetails} = useFormContext().personalDetailsContext
     const emailVerification = (e:React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>)=>{
+        setPersonalDetails(prev => ({...prev,email:e.target.value}))
         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)){
             setEmailError(true)
-            setPersonalDetails(prev => ({...prev,email:e.target.value}))
         }
         else{
             setEmailError(false)
@@ -387,9 +387,9 @@ export default function FormSection(){
     const {setOpenModal} = useFormContext().modalContext
     return(
         createPortal(
-            <div className="fixed top-0 h-screen overflow-y-auto backdrop-blur-[5px] w-full flex flex-col items-center justify-center bg-[#00000045]">
+            <div className="fixed top-0 h-dvh overflow-y-auto backdrop-blur-[5px] w-full flex flex-col items-center justify-center bg-[#00000045]">
                 {formNumber > 1 ? <FiArrowLeft className="size-10 text-white absolute top-2.75 left-5.5" onClick={()=>setFormNumber(n=>n-1)}/>:<FiX className="size-10 text-white absolute top-2.75 left-5.5" onClick={()=>setOpenModal(false)}/>}
-                <div className="w-[93%] lg:w-[63%] h-[80vh]">
+                <div className=" w-[93%] lg:w-[63%] h-[80vh]">
                     <Heading />
                     <StepsSection formNumber={formNumber}/>
                     {formNumber === 1 ? <ProjectForm setFormNumber={setFormNumber}/>:formNumber === 2 ? <PersonalForm setFormNumber={setFormNumber}/>:<ReviewPart setFormNumber={setFormNumber}/>}
