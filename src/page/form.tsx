@@ -388,7 +388,7 @@ export default function FormSection(){
     return(
         createPortal(
             <div className="fixed top-0 h-dvh overflow-y-auto backdrop-blur-[5px] w-full flex flex-col items-center justify-center bg-[#00000045]">
-                {formNumber > 1 ? <FiArrowLeft className="size-10 text-white absolute top-2.75 left-5.5" onClick={()=>setFormNumber(n=>n-1)}/>:<FiX className="size-10 text-white absolute top-2.75 left-5.5" onClick={()=>setOpenModal(false)}/>}
+                {formNumber > 1 ? <FiArrowLeft className="size-10 text-white absolute top-2.75 right-5.5" onClick={()=>setFormNumber(n=>n-1)}/>:<FiX className="size-10 text-white absolute top-2.75 right-5.5" onClick={()=>setOpenModal(false)}/>}
                 <div className=" w-[93%] lg:w-[63%] h-[80vh]">
                     <Heading />
                     <StepsSection formNumber={formNumber}/>
