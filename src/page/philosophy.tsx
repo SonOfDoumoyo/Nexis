@@ -19,7 +19,7 @@ export default function PhilosophySection(){
                     <div className="grid lg:grid-cols-1 sm:grid-cols-1 gap-8 py-11">
                         <div className={`${isMobile == true ? 'w-[80vw] p-4 text-[5px]':'w-[35vw] p-8 text-lg'}
                             relative
-                            min-h-[20px]
+                            min-h-5
                             rounded-3xl
                             bg-warm-gold
                             backdrop-blur-xl

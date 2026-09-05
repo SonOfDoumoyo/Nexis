@@ -4,13 +4,11 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import SentimentSatisfiedAltOutlinedIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
-import Users from "../assets/user_image.jpeg"
 import Kudos from "../assets/founders/kudos_ajao.png"
 import Nimi from "../assets/founders/nimi_duomoyo.jpg"
 import Grant from "../assets/founders/grant_godspower.jpg"
 import Deaver from "../assets/founders/Deaver.jpg"
 import Marvellous from "../assets/founders/marvellous_akani.jpg"
-import { FiArrowRight } from "react-icons/fi";
 
 
 export default function AboutSection(){
@@ -18,7 +16,7 @@ export default function AboutSection(){
     function Founders({name, skill, src}:any){
         return (
   <div
-    className={`${isMobile == true ? 'w-[200px] h-[250px]':'w-[clamp(230px,250px,300px)] h-[35vh]'}
+    className={`${isMobile == true ? 'w-50 h-62.5':'w-[clamp(230px,250px,300px)] h-[35vh]'}
       group relative
       overflow-hidden
       rounded-xl
@@ -119,15 +117,15 @@ export default function AboutSection(){
                 <div className="flex flex-col gap-4">
                     <div className="bg-warm-gold p-8 rounded-2xl">
                         <p className="text-lg font-semibold">Who We Are</p>
-                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-[250px] leading-relaxed'}  text-white/60`}>A purpose driven company building digital solutions that connect people, ideas and technology.</p>
+                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-62.5 leading-relaxed'}  text-white/60`}>A purpose driven company building digital solutions that connect people, ideas and technology.</p>
                     </div>
                     <div className="bg-warm-gold p-8 rounded-2xl">
                         <p className="text-lg font-semibold">What We Do</p>
-                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-[250px] leading-relaxed'}  text-white/60`}>We design and build intelligent digital products, platforms, and systems that drive real results.</p>
+                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-62.5 leading-relaxed'}  text-white/60`}>We design and build intelligent digital products, platforms, and systems that drive real results.</p>
                     </div>
                     <div className="bg-warm-gold p-8 rounded-2xl">
                         <p className="text-lg font-semibold">Why It Matters</p>
-                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-[250px] leading-relaxed'}  text-white/60`}>We believe technology should empower people, elevate businesses, and create a positive impact.</p>
+                        <p className={`${isMobile == true ? 'text-[8px] font-grotesk':'text-xl w-62.5 leading-relaxed'}  text-white/60`}>We believe technology should empower people, elevate businesses, and create a positive impact.</p>
                     </div>
                 </div>
             </div>
