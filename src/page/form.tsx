@@ -240,7 +240,7 @@ function ProjectForm({setFormNumber}:FormProp){
 
 function SubmitBtn({text}:SubmitBtnProp){
     return(
-        <input type='submit' value={text} className="rounded-3xl border-3 bg-linear-to-br from-0% from-[#e676e6a4] to-[#3a0b3a] border-transparent w-full p-2.5 mt-4 [background-clip:border-area]"/>
+        <input type='submit' value={text} className="rounded-3xl border-3 border-purple-600 w-full p-2.5 mt-4"/>
     )
 }
 
