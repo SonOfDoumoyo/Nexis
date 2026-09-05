@@ -7,9 +7,12 @@ import DeveloperModeOutlinedIcon from "@mui/icons-material/DeveloperModeOutlined
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
 import { FiArrowRight } from "react-icons/fi"
+import { useFormContext } from "../context";
+
 
 export default function ServicesSection(){
     const isMobile = useIsMobile();
+    const {setOpenModal} = useFormContext().modalContext
     function Services({title, text, id}:any){
         return (
             <div className={`${isMobile == true ? 'flex-col p-4':'flex-row p-11'} flex gap-8 bg-primary-purple/50 backdrop-blur-xl`}>
@@ -24,7 +27,7 @@ export default function ServicesSection(){
                         <p className={`${isMobile ? 'text-[11px]':'text-2xl'} font-bebas font-semibold`}>{title}</p>
                         <p className={`${isMobile == true ? 'text-[8px] font-grotesk':''}  text-white/60`}>{text}</p>
                     </div>
-                    <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold flex flex-row gap-2 items-center`}>Learn More <FiArrowRight /></p>
+                    {/* <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold flex flex-row gap-2 items-center`}>Learn More <FiArrowRight /></p> */}
                 </div>
             </div>
         )
@@ -39,8 +42,12 @@ export default function ServicesSection(){
                 <p className={`${isMobile ? 'text-3xl font-bold font-bebas':'text-6xl font-normal font-bebas'} `}>Digital Solution.<br/><span className="text-primary-purple">Real Impact.</span></p>
                 <p className={`text-white/60 ${isMobile ? 'text-[8px]':'text-xl'}`}>We design, build, and scale intelligent digital<br/>solutions that help businesses grow, operate<br/>smarter, and lead the future.</p>
                 <div className={`${isMobile == true ? 'flex-row w-full':'flex-row'} flex gap-3`}>
-                    <CreateButton text="Work With Us" type={1} arrow={true}/>
-                    <CreateButton text="Explore Our Process" type={2} arrow={false} />
+                    <CreateButton text="Work With Us" type={1} arrow={true} onClick={()=>setOpenModal(true)}/>
+                    <CreateButton text="Explore Our Process" type={2} arrow={false} onClick={()=>{
+                        document.getElementById("philosophy")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",})
+                    }}/>
                 </div>
             </div>
             <div className={`${isMobile ? 'grid-cols-2':'grid-cols-2'} grid gap-5`}>

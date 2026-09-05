@@ -16,6 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Comic+Relief:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import 'tailwindcss';
+@import "react-phone-number-input/style.css";
     
 /* :root{
   --color-primary-purple: '#7136D1';
@@ -80,4 +81,31 @@ h3 {
   background-repeat: no-repeat;
 }
 
+.steps{
+  box-shadow: 
+    0 0 5px #7136D1
+    0 0 15px #7136D1,
+    0 0 35px rgba(168, 85, 247, 0.7),
+    inset 0 0 10px rgba(168, 85, 247, 0.5)
+    ;
+}
 
+.PhoneInput{
+   @apply flex justify-between px-1 py-1 rounded-[10px] bg-gray-700/70 outline-none border border-subText
+}
+
+.PhoneInputInput{
+  @apply flex-1 outline-none border-none bg-transparent
+}
+
+.PhoneInputCountry{
+  @apply bg-gray-800/60 h-full rounded-[10px] w-18.75 flex p-2.75 gap-2.75
+}
+
+.PhoneInputCountrySelect{
+  @apply text-subText bg-gray-700/80 scrollbar-none [scrollbar-behaviour:smooth]
+}
+
+.PhoneInputCountrySelectArrow{
+  @apply scale-[1.6]
+}

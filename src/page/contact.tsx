@@ -5,9 +5,22 @@ import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import { useIsMobile } from "../Hooks";
 import { FiArrowRight } from "react-icons/fi";
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
+import { useState } from "react";
 
 export default function ContactSection(){
     const isMoble = useIsMobile()
+    const [messageDetails,setMessageDetails] = useState({
+        fullname:'',
+        email:'',
+        company:'',
+        subject:'',
+        message:''
+    })
+    const messageDetailsList = Object.entries(messageDetails).map(([key,value])=>(`${key}:${value}`))
+    const messageDetailsMessage = messageDetailsList.join('\n\n')
+    const phone = "2347060478435"
+    const message = messageDetailsMessage
+    const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
     return (
         <section id="contact" className={`${isMoble ? 'flex-col':'flex-row justify-between'} flex gap-2`}>
             <div className="flex flex-col gap-3">
@@ -54,28 +67,28 @@ export default function ContactSection(){
                 <div className={`${isMoble ? 'text-[8px] gap-2':'gap-4'} flex flex-row w-full`}>
                     <div className={`${isMoble ? 'gap-1':'gap-2'} flex flex-col w-full text-white`}>
                         <p>Full Name</p>
-                        <input type="text" placeholder="Enter your full name" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-[4px]`}/>
+                        <input type="text" placeholder="Enter your full name" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-sm`} onChange={(e)=>{setMessageDetails(prev => ({...prev,fullname:e.target.value}))}}/>
                     </div>
                     <div className={`${isMoble ? 'gap-1':'gap-2'} flex flex-col w-full`}>
                         <p>Email Address</p>
-                        <input type="text" placeholder="Enter your email" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-[4px]`}/>
+                        <input type="text" placeholder="Enter your email" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-sm`} onChange={(e)=>{setMessageDetails(prev => ({...prev,email:e.target.value}))}}/>
                     </div>
                 </div>
                 <div className={`${isMoble ? 'text-[8px] gap-2':'gap-4'} flex flex-row w-full`}>
                     <div className={`${isMoble ? 'gap-1':'gap-2'} flex flex-col w-full`}>
                         <p>Company/Organization</p>
-                        <input type="text" placeholder="Enter your company name" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-[4px]`}/>
+                        <input type="text" placeholder="Enter your company name" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-sm`} onChange={(e)=>{setMessageDetails(prev => ({...prev,company:e.target.value}))}}/>
                     </div>
                     <div className={`${isMoble ? 'gap-1':'gap-2'} flex flex-col w-full`}>
                         <p>Subject</p>
-                        <input type="text" placeholder="What's this about?" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-[4px]`}/>
+                        <input type="text" placeholder="What's this about?" className={`${isMoble ? 'p-2':'p-4'} text-white/70 placeholder:text-white/30 w-full outline-0 border backdrop-blur-2xl border-primary-purple rounded-sm`} onChange={(e)=>{setMessageDetails(prev => ({...prev,subject:e.target.value}))}}/>
                     </div>
                 </div>
                 <div className={`${isMoble ? 'text-[8px] gap-2':'gap-4'} flex flex-row w-full`}>
                     <p>Message:</p>
-                    <textarea name="" placeholder="Tell us about your project or ideas..." className={`${isMoble == true ? 'h-[100px]':'h-[130px]'} text-white/70 placeholder:text-white/30 border p-3 backdrop-blur-2xl border-primary-purple w-full rounded-[4px]`} id=""></textarea>
+                    <textarea name="" placeholder="Tell us about your project or ideas..." className={`${isMoble == true ? 'h-25':'h-32.5'} text-white/70 placeholder:text-white/30 border p-3 backdrop-blur-2xl border-primary-purple w-full rounded-sm`} id="" onChange={(e)=>{setMessageDetails(prev => ({...prev,message:e.target.value}))}}></textarea>
                 </div>
-                <button className={`${isMoble ? 'p-2 font-bold text-[8px]':'p-5'} flex flex-row items-center justify-center gap-3 shadow-lg shadow-warm-gold bg-linear-to-r from-deep-purple to-warm-gold text-white/70 rounded-[4px]`}>Send Message <FiArrowRight /></button>
+                <button className={`${isMoble ? 'p-2 font-bold text-[8px]':'p-5'} flex flex-row items-center justify-center gap-3 shadow-lg shadow-warm-gold bg-linear-to-r from-deep-purple to-warm-gold text-white/70 rounded-sm`}><a href={link} target="_blank" rel="noopener noreferrer" className={"[text-decoration:none] text-white/70 " + `${isMoble ? 'font-bold text-[8px]':''}`}>Send Message</a> <FiArrowRight /></button>
             </div>
             <div className={`${isMoble ? 'p-3 rounded-xl':'p-11 rounded-3xl'} flex justify-between items-center fex-row gap-3 bg-primary-purple/30  backdrop-blur-[11px] border border-primary-purple`}>
                 <div className={`${isMoble ? 'text-[8px] gap-2':'gap-4'} flex flex-row items-center`}>

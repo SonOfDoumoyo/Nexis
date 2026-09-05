@@ -5,6 +5,11 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import SentimentSatisfiedAltOutlinedIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
 import Users from "../assets/user_image.jpeg"
+import Kudos from "../assets/founders/kudos_ajao.png"
+import Nimi from "../assets/founders/nimi_duomoyo.jpg"
+import Grant from "../assets/founders/grant_godspower.jpg"
+import Deaver from "../assets/founders/Deaver.jpg"
+import Marvellous from "../assets/founders/marvellous_akani.jpg"
 import { FiArrowRight } from "react-icons/fi";
 
 
@@ -103,8 +108,12 @@ export default function AboutSection(){
                     </div>
                     <p className={`text-white/60 ${isMobile ? 'text-[8px]':'text-xl'}`}>Nexis is a collective of thinkers, creators, and builders passionate about solving meaningful problems through intelligent technology and human centered design.</p>
                     <div className={`${isMobile == true ? 'flex-row':'flex-row'} flex gap-3`}>
-                        <CreateButton text="Our Story" type={1} arrow={true}/>
-                        <CreateButton text="Meet The Team" type={2} arrow={true} />
+                        <div className="opacity-50"><CreateButton text="Our Story" type={1} arrow={true}/></div>
+                        <CreateButton text="Meet The Team" type={2} arrow={true} onClick={()=>{
+                            document.getElementById("team")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",})
+                        }}/>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -155,14 +164,14 @@ export default function AboutSection(){
             <div className="flex flex-col gap-3">
                 <p  className={`${isMobile ? 'text-[8px]':''} text-bright-gold font-bold`}>THE PEOPLE BEHIND NEXIS</p>
                 <p className={`${isMobile ? 'text-3xl font-light':'text-5xl font-normal'} font-bebas text-metallic-gold`}>A team united by curiosity,<br/> driven by purpose.</p>
-                <div className={`${isMobile == true ? 'flex-col':'flex-row '} flex items-center justify-center gap-4 w-full`}>
-                    <Founders name="Kudos Ajao" skill="Full-stack Dev." src={Users} />
-                    <Founders name="Doumoyo Nimi" skill="Full-stack Dev." src={Users} />
-                    <Founders name="Deaver" skill="Full-stack Dev." src={Users} />
-                    <Founders name="Grant" skill="Cinematographer." src={Users} />
-                    <Founders name="Marvelous" skill="Graphics Designer." src={Users} />
+                <div className={`${isMobile == true ? 'flex-col':'flex-row '} flex items-center justify-center gap-4 w-full`} id="team">
+                    <Founders name="Kudos Ajao" skill="Full-stack Dev." src={Kudos} />
+                    <Founders name="Doumoyo Nimi" skill="Full-stack Dev." src={Nimi} />
+                    <Founders name="Deaver" skill="Full-stack Dev." src={Deaver} />
+                    <Founders name="Grant" skill="Cinematographer." src={Grant} />
+                    <Founders name="Marvelous" skill="Graphics Designer." src={Marvellous} />
                 </div>
-                <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold flex flex-row items-center gap-2`}>View All Team Members <FiArrowRight /></p>
+                {/* <p className={`${isMobile ? 'text-[8px]':''} text-bright-gold flex flex-row items-center gap-2`}>View All Team Members <FiArrowRight /></p> */}
             </div>
         </section>
     )
